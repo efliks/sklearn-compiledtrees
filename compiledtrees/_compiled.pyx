@@ -23,8 +23,6 @@ cdef class BaseCompiledPredictor:
         if func == NULL:
             raise ValueError("Could not find compiled evaluation function in file")
         self.func = func
-
-    def __dealloc__(self):
         dlclose(self.handle)
 
 
